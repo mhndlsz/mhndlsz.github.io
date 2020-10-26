@@ -39,8 +39,11 @@
         function pageLoaded() {
 
             for (var i = 0; i < 1000; i++) {
-                check()
-                new Promise(resolve => setTimeout(resolve, 1000));
+                setTimeout(function() {
+                    check();
+                }, 3000);
+
+                //    new Promise(resolve => setTimeout(resolve, 10200));
                 console.log("chekced")
                     //  sleep(1000)
             }
