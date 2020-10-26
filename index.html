@@ -34,17 +34,34 @@
     <iframe id="myFrame" src="https://docs.google.com/forms/d/e/1FAIpQLSdprcyNkPM51nCVpfhnIc217j8XexrhgpF9ZSB1-urfFZmGNQ/viewform?usp=sf_link" frameborder="0" style="background: #f9f2f2;">
               </iframe>
     <script>
-        var iframe = document.getElementById("myFrame");
-        var elmnt = iframe.contentWindow.document.getElementsByTagName("div");
+        document.addEventListener('DOMContentLoaded', pageLoaded);
 
-        for (var i = 0; i < elmnt.length; i++) {
+        function pageLoaded() {
 
-
-            if (elmnt[i].innerHTML == 'test message') {
-
-                elmnt[i].style.display = "none";
-
+            for (var i = 0; i < elmnt.length; i++) {
+                check()
+                sleep(1000)
             }
+
+
+        }
+
+        function check() {
+
+            var iframe = document.getElementById("myFrame");
+            var elmnt = iframe.contentWindow.document.getElementsByTagName("div");
+
+            for (var i = 0; i < elmnt.length; i++) {
+
+
+                if (elmnt[i].innerHTML == 'test message') {
+
+                    elmnt[i].style.display = "none";
+
+                }
+            }
+
+
         }
     </script>
 </body>
